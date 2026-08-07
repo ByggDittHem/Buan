@@ -53,3 +53,79 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+/* =====================================
+   TILL TOPPEN-KNAPP
+===================================== */
+
+const topButton = document.createElement("button");
+
+topButton.innerHTML = "↑";
+
+topButton.id = "topButton";
+
+document.body.appendChild(topButton);
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        topButton.classList.add("show");
+
+    } else {
+
+        topButton.classList.remove("show");
+
+    }
+
+});
+
+topButton.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+
+/* =====================================
+   AKTIV MENY
+===================================== */
+
+const sections = document.querySelectorAll("section");
+
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 140;
+
+        if (window.scrollY >= sectionTop){
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href")==="#" + current){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
