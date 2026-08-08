@@ -1,547 +1,224 @@
-/* =====================================
-   BUAN
-   Style v1.0
-===================================== */
+/* ByggDittHem – ren webbplatslayout */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;color:#2f2f2f;background:#fff;line-height:1.6}
+.container{width:min(1120px,90%);margin:0 auto}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* HERO */
+#hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-image{position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;object-fit:cover}
+#hero::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(0,0,0,.38)}
+.hero-logo{position:absolute;top:24px;left:5%;z-index:4;display:block;width:150px;height:auto;max-width:150px;max-height:86px;padding:0;margin:0;background:transparent!important;border:0;border-radius:0;box-shadow:none!important;object-fit:contain;filter:none}
+.hero-content{position:relative;z-index:3;width:min(1000px,90%);margin:0 auto;padding-top:40px;text-align:center;color:#fff}
+.hero-content h1{margin-bottom:18px;font-size:clamp(40px,5.2vw,70px);line-height:1.08;font-weight:700;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.hero-content h2{display:inline-block;margin-bottom:22px;padding:9px 20px;border-radius:999px;background:#9a7440;color:#fff;font-size:clamp(20px,2.3vw,30px);line-height:1.2}
+.hero-content p{max-width:760px;margin:0 auto 30px;font-size:clamp(17px,2vw,22px);color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.button{display:inline-block;padding:15px 36px;border-radius:999px;background:#9a7440;color:#fff;text-decoration:none;font-size:17px;font-weight:700}
+.button:hover{background:#79592f}
+
+
+/* LÄGET */
+#location{padding:78px 0 84px;background:#f7f4ef}
+#location>.container>h2{margin-bottom:34px;text-align:center;font-size:clamp(30px,4vw,44px);line-height:1.15}
+.location-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:1000px;margin:0 auto}
+.location-list{background:#fff;border-radius:18px;padding:28px 30px;box-shadow:0 8px 28px rgba(0,0,0,.07)}
+.location-list h3{margin-bottom:16px;color:#9a7440;font-size:28px}
+.location-item{display:flex;align-items:center;gap:14px;min-height:58px;padding:11px 0;border-bottom:1px solid #ece7df;font-size:18px;font-weight:600}
+.location-item:last-child{border-bottom:0}
+.location-item svg{flex:0 0 auto;width:26px;height:26px;color:#9a7440;stroke:#9a7440}
+
+/* FÖRHANDSBESKED */
+#preliminary{padding:72px 0;background:#fff}
+#preliminary .container{max-width:1000px}
+#preliminary h2{margin-bottom:22px;text-align:center;font-size:clamp(30px,4vw,44px)}
+#preliminary p{padding:28px 34px;border-left:5px solid #9a7440;border-radius:12px;background:#f7f4ef;color:#444;font-size:19px;text-align:center}
+
+/* KONTAKT */
+#contact{padding:78px 0 88px;background:#f7f4ef;text-align:center}
+#contact h2{margin-bottom:24px;font-size:clamp(30px,4vw,44px)}
+#contact p{max-width:700px;margin:0 auto 28px;color:#555;font-size:19px}
+
+/* MOBIL */
+@media(max-width:700px){
+.hero-logo{top:18px;left:6%;width:120px;max-width:120px;max-height:70px}
+.hero-content{width:88%;padding-top:55px}
+.hero-content h1{font-size:clamp(34px,10vw,48px)}
+.hero-content h2{font-size:20px;padding:8px 14px}
+.hero-content p{font-size:17px}
+.house-example{font-size:16px}
+.location-columns{grid-template-columns:1fr;gap:18px}
+.location-list{padding:23px 20px}
+.location-item{font-size:16px}
+#preliminary p{padding:22px 20px;font-size:17px}
 }
 
-html{
-    scroll-behavior:smooth;
+/* HUS-EXEMPEL – DISKRET I HERO */
+.house-example-corner {
+  position: absolute;
+  left: 4%;
+  bottom: 24px;
+  z-index: 4;
+  width: min(440px, 42%);
+  padding: 10px 14px;
+  color: rgba(255,255,255,.94);
+  background: rgba(0,0,0,.28);
+  border-left: 3px solid #9a7440;
+  border-radius: 0 7px 7px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  text-shadow: 0 1px 5px rgba(0,0,0,.45);
+}
+.house-example-corner strong,
+.house-example-corner span {
+  display: block;
+}
+.house-example-corner strong {
+  margin-bottom: 2px;
 }
 
-body{
-    font-family:"Segoe UI",Arial,Helvetica,sans-serif;
-    color:#2f2f2f;
-    background:#ffffff;
-    line-height:1.7;
+/* GOLF – Font Awesome */
+.location-item .golf-icon {
+  flex: 0 0 auto;
+  width: 26px;
+  font-size: 24px;
+  color: #9a7440;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+@media(max-width:700px){
+  .house-example-corner {
+    left: 5%;
+    bottom: 18px;
+    width: 90%;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
 }
 
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(8px);
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+.location-item .golf-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 26px;
+  width: 26px !important;
+  height: 26px;
+  font-size: 22px !important;
+  color: #9a7440 !important;
+  line-height: 1;
+}
+@media(max-width:700px){
+  .house-example-corner {
+    left: 5%;
+    bottom: 16px;
+    width: 90%;
+    padding: 8px 11px;
+    font-size: 11px;
+  }
 }
 
-header .container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
+/* FINAL ICON CONSISTENCY */
+.location-item svg,
+.location-item .golf-icon {
+  color: #9a7440 !important;
+  fill: none;
+  stroke: #9a7440 !important;
 }
 
-.logo img{
-    height:70px;
+.location-item .golf-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  font-size: 21px;
+  line-height: 1;
+  color: #9a7440 !important;
+  filter: none !important;
 }
 
-nav ul{
-    display:flex;
-    gap:40px;
-    list-style:none;
+/* House example stays inside the hero, in the lower-left corner. */
+.house-example-corner {
+  position: absolute;
+  left: 4%;
+  bottom: 24px;
+  z-index: 4;
+  width: min(440px, 42%);
+  padding: 10px 14px;
+  color: rgba(255,255,255,.94);
+  background: rgba(0,0,0,.28);
+  border-left: 3px solid #9a7440;
+  border-radius: 0 7px 7px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  text-shadow: 0 1px 5px rgba(0,0,0,.45);
 }
 
-nav a{
-    text-decoration:none;
-    color:#333;
-    font-weight:600;
-    transition:.25s;
+.house-example-corner strong,
+.house-example-corner span {
+  display: block;
 }
 
-nav a:hover{
-    color:#8B6B3E;
+.house-example-corner strong {
+  margin-bottom: 2px;
 }
 
-#hero{
-    height:100vh;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
+@media(max-width:700px) {
+  .house-example-corner {
+    left: 5%;
+    bottom: 16px;
+    width: 90%;
+    padding: 8px 11px;
+    font-size: 11px;
+  }
 }
 
-.hero-image{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
+/* FINAL HERO HOUSE-EXAMPLE POSITION */
+#hero .house-example-corner {
+  position: absolute !important;
+  left: 4% !important;
+  bottom: 22px !important;
+  z-index: 5 !important;
+  width: min(430px, 38%) !important;
+  padding: 9px 13px !important;
+  margin: 0 !important;
+  color: rgba(255,255,255,.94) !important;
+  background: rgba(0,0,0,.30) !important;
+  border-left: 3px solid #9a7440 !important;
+  border-radius: 0 7px 7px 0 !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,.5) !important;
+}
+#hero .house-example-corner strong,
+#hero .house-example-corner span {
+  display: block !important;
+}
+#hero .house-example-corner strong {
+  margin-bottom: 2px !important;
 }
 
-#hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.45);
-    z-index:1;
+/* Golf icon: same gold as every Lucide icon */
+.location-item .golf-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 26px !important;
+  width: 26px !important;
+  height: 26px !important;
+  font-size: 21px !important;
+  line-height: 1 !important;
+  color: #9a7440 !important;
+  -webkit-text-fill-color: #9a7440 !important;
+  filter: none !important;
 }
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    text-align:center;
-    color:#fff;
-    width:min(800px,90%);
-}
-
-.hero-content h1{
-    font-size:clamp(42px,6vw,72px);
-    margin-bottom:20px;
-}
-
-.hero-content p{
-    font-size:22px;
-    margin-bottom:40px;
-}
-
-.button{
-    display:inline-block;
-    background:#8B6B3E;
-    color:#fff;
-    text-decoration:none;
-    padding:18px 42px;
-    border-radius:40px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.button:hover{
-    background:#6f552f;
-    transform:translateY(-3px);
-}
-/* =====================================
-   SEKTIONSLAYOUT
-===================================== */
-
-section{
-
-    padding:110px 0;
-
-}
-
-section h2{
-
-    text-align:center;
-
-    font-size:42px;
-
-    margin-bottom:25px;
-
-    color:#2c2c2c;
-
-}
-
-section p{
-
-    font-size:18px;
-
-}
-
-/* =====================================
-   ABOUT
-===================================== */
-
-#about{
-
-    background:#ffffff;
-
-}
-
-#about p{
-
-    max-width:900px;
-
-    margin:0 auto;
-
-    text-align:center;
-
-    font-size:20px;
-
-    color:#555;
-
-}
-
-/* =====================================
-   FÖRDELAR
-===================================== */
-
-#advantages{
-
-    background:#f7f7f7;
-
-}
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:35px;
-
-    margin-top:50px;
-
-}
-
-.card{
-
-    background:#ffffff;
-
-    border-radius:18px;
-
-    padding:40px 30px;
-
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 45px rgba(0,0,0,.12);
-
-}
-
-.card h3{
-
-    margin-bottom:18px;
-
-    font-size:26px;
-
-    color:#8B6B3E;
-
-}
-
-.card p{
-
-    color:#666;
-
-}
-
-/* =====================================
-   GALLERI
-===================================== */
-
-#gallery{
-
-    background:#ffffff;
-
-}
-
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-    gap:25px;
-
-    margin-top:45px;
-
-}
-
-.gallery img{
-
-    width:100%;
-
-    height:280px;
-
-    object-fit:cover;
-
-    border-radius:18px;
-
-    transition:.3s;
-
-    cursor:pointer;
-
-}
-
-.gallery img:hover{
-
-    transform:scale(1.03);
-
-}
-/* =====================================
-   KONTAKT
-===================================== */
-
-#contact{
-
-    background:#f7f4ef;
-
-    text-align:center;
-
-}
-
-#contact p{
-
-    max-width:700px;
-
-    margin:0 auto 35px;
-
-    color:#555;
-
-    font-size:20px;
-
-}
-
-#contact .button{
-
-    font-size:18px;
-
-}
-
-/* =====================================
-   FOOTER
-===================================== */
-
-footer{
-
-    background:#222;
-
-    color:#ffffff;
-
-    padding:35px 0;
-
-    text-align:center;
-
-}
-
-footer p{
-
-    font-size:15px;
-
-    opacity:.8;
-
-}
-
-/* =====================================
-   ENKLA ANIMATIONER
-===================================== */
-
-.button,
-.card,
-.gallery img{
-
-    transition:all .3s ease;
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.gallery img:hover{
-
-    transform:scale(1.03);
-
-}
-
-/* =====================================
-   RESPONSIVE
-===================================== */
-
-@media (max-width: 992px){
-
-    header .container{
-
-        flex-direction:column;
-
-        gap:20px;
-
-        padding:20px 0;
-
-    }
-
-    nav ul{
-
-        gap:20px;
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-    }
-
-    .hero-content h1{
-
-        font-size:52px;
-
-    }
-
-    .hero-content p{
-
-        font-size:20px;
-
-    }
-
-}
-
-@media (max-width: 768px){
-
-    section{
-
-        padding:80px 0;
-
-    }
-
-    section h2{
-
-        font-size:34px;
-
-    }
-
-    .hero-content h1{
-
-        font-size:40px;
-
-    }
-
-    .hero-content p{
-
-        font-size:18px;
-
-    }
-
-    .button{
-
-        width:100%;
-
-        max-width:320px;
-
-        text-align:center;
-
-        padding:16px 24px;
-
-    }
-
-    .gallery{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-@media (max-width: 480px){
-
-    .logo img{
-
-        height:55px;
-
-    }
-
-    nav ul{
-
-        flex-direction:column;
-
-        gap:12px;
-
-    }
-
-    .hero-content h1{
-
-        font-size:32px;
-
-    }
-
-    .hero-content p{
-
-        font-size:16px;
-
-    }
-
-}
-/* =====================================
-   MOBILMENY
-===================================== */
-
-.menu-toggle{
-
-    display:none;
-
-    background:none;
-
-    border:none;
-
-    font-size:34px;
-
-    cursor:pointer;
-
-    color:#333;
-
-}
-
-@media (max-width:900px){
-
-    .menu-toggle{
-
-        display:block;
-
-    }
-
-    nav{
-
-        position:absolute;
-
-        top:100%;
-
-        left:0;
-
-        width:100%;
-
-        background:white;
-
-        display:none;
-
-        box-shadow:0 10px 30px rgba(0,0,0,.12);
-
-    }
-
-    nav.open{
-
-        display:block;
-
-    }
-
-    nav ul{
-
-        flex-direction:column;
-
-        gap:0;
-
-    }
-
-    nav li{
-
-        border-bottom:1px solid #ececec;
-
-    }
-
-    nav a{
-
-        display:block;
-
-        padding:18px 25px;
-
-    }
-
+@media (max-width:700px) {
+  #hero .house-example-corner {
+    left: 5% !important;
+    bottom: 14px !important;
+    width: 90% !important;
+    font-size: 11px !important;
+  }
 }
